@@ -41,7 +41,7 @@ class TransfersController < ApplicationController
   def update
     respond_to do |format|
       if @transfer.update(transfer_params)
-        format.html { redirect_to transfer_url(@transfer), notice: "Transfer was successfully updated." }
+        format.html { redirect_to transfer_url(@transfer), notice: "Transferência atualizada com sucesso." }
         format.json { render :show, status: :ok, location: @transfer }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -55,7 +55,7 @@ class TransfersController < ApplicationController
     @transfer.destroy
 
     respond_to do |format|
-      format.html { redirect_to transfers_url, notice: "Transfer was successfully destroyed." }
+      format.html { redirect_to transfers_url, notice: "Verifique! Transferência não pode ser excluída." }
       format.json { head :no_content }
     end
   end
@@ -67,13 +67,13 @@ class TransfersController < ApplicationController
       @transfer = current_user.account.transfers.new(transfer_params)
       last_balance = current_user.account.get_balance
       if @transfer.amount.to_f + BankOperations.get_tax(@transfer.amount)  > last_balance
-        @transfer.errors.add(:message, "Saldo insuficiente")
+        @transfer.errors.add(:message, "Saldo insuficiente.")
         respond_to do |format|
           format.html { render :edit }
           format.json { render json: @transfer.errors, status: :unprocessable_entity}
         end
       elsif account_to.nil?
-        @transfer.errors.add(:message, 'Conta não encontrada')
+        @transfer.errors.add(:message, 'Conta não encontrada.')
         respond_to do |format|
           format.html { render :edit }
           format.json { render json: @transfer.errors, status: :unprocessable_entity}

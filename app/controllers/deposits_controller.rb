@@ -26,7 +26,7 @@ class DepositsController < ApplicationController
 
     respond_to do |format|
       if @deposit.save
-        format.html { redirect_to deposit_url(@deposit), notice: "Deposit was successfully created." }
+        format.html { redirect_to deposit_url(@deposit), notice: "Depósito realizado com sucesso." }
         format.json { render :show, status: :created, location: @deposit }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +39,7 @@ class DepositsController < ApplicationController
   def update
     respond_to do |format|
       if @deposit.update(deposit_params)
-        format.html { redirect_to deposit_url(@deposit), notice: "Deposit was successfully updated." }
+        format.html { redirect_to deposit_url(@deposit), notice: "Depósito atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @deposit }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class DepositsController < ApplicationController
     @deposit.destroy
 
     respond_to do |format|
-      format.html { redirect_to deposits_url, notice: "Deposit was successfully destroyed." }
+      format.html { redirect_to deposits_url, notice: "Verifique! Depósito não pode ser excluído." }
       format.json { head :no_content }
     end
   end

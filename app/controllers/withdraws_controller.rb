@@ -25,7 +25,7 @@ class WithdrawsController < ApplicationController
 
     respond_to do |format|
       if @withdraw.save
-        format.html { redirect_to withdraw_url(@withdraw), notice: "Withdraw was successfully created." }
+        format.html { redirect_to withdraw_url(@withdraw), notice: "Saque realizado com sucesso." }
         format.json { render :show, status: :created, location: @withdraw }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class WithdrawsController < ApplicationController
   def update
     respond_to do |format|
       if @withdraw.update(withdraw_params)
-        format.html { redirect_to withdraw_url(@withdraw), notice: "Withdraw was successfully updated." }
+        format.html { redirect_to withdraw_url(@withdraw), notice: "Saque atualizado com sucesso." }
         format.json { render :show, status: :ok, location: @withdraw }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class WithdrawsController < ApplicationController
     @withdraw.destroy
 
     respond_to do |format|
-      format.html { redirect_to withdraws_url, notice: "Withdraw was successfully destroyed." }
+      format.html { redirect_to withdraws_url, notice: "Verifique! Saque não pode ser realizado." }
       format.json { head :no_content }
     end
   end
@@ -62,7 +62,7 @@ class WithdrawsController < ApplicationController
       @withdraw = current_user.account.withdraws.new(withdraw_params)
       last_balance = current_user.account.get_balance
       if @withdraw.amount.to_f > last_balance
-        @withdraw.errors.add(:message, "Saldo insuficiente")
+        @withdraw.errors.add(:message, "Saldo insuficiente.")
         respond_to do |format| 
           format.html { render :edit}
           format.json {render json: @withdraw.erros, status: :unprocessable_entity}
