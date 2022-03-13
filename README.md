@@ -1,24 +1,14 @@
-# README
+# TESTE NOBE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Necessidade Negocial
+A aplicação trata as movimentações que um cliente pode fazer ao chegar no caixa de um banco.
 
-Things you may want to cover:
+O cliente pode fazer:
 
-* Ruby version
+* Editar e Encerrar sua Conta
+* Realizar Depósitos
+* Realizar Saques
+* Realizar Transferências entre Contas
+* Solicitar Saldo
+* Solicitar Extrato Filtrando por Data Início e Final
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
