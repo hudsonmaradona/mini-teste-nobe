@@ -1,4 +1,4 @@
-<%- model_class = Deposit -%>
+<% model_class = Deposit -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
@@ -8,5 +8,4 @@
   <dd><%= Extenso.real_formatado(@deposit.amount) %></dd>
 </dl>
 
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              deposits_path, :class => 'btn btn-default'  %>
+<%= link_to t('.back', :default => t("helpers.links.back")), deposits_path, :class => 'btn btn-default'  %>
