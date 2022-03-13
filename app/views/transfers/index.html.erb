@@ -1,0 +1,36 @@
+<%- model_class = Transfer -%>
+<div class="page-header">
+  <h1><%=t ".title", :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:account_id) %></th>
+      <th><%= model_class.human_attribute_name(:amount) %></th>
+      <th><%= model_class.human_attribute_name(:account_to) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @transfers.each do |transfer| %>
+      <tr>
+        <td><%= link_to transfer.id, transfer_path(transfer) %></td>
+        <td><%= transfer.account_id %></td>
+        <td><%= transfer.amount %></td>
+        <td><%= transfer.account_to %></td>
+        <td><%=l transfer.created_at %></td>
+        <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      transfer_path(transfer), :class => 'btn btn-default btn-xs' %>
+          
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_transfer_path,
+            :class => 'btn btn-primary' %>
