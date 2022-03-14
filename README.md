@@ -34,11 +34,11 @@ O cliente pode fazer:
 
 # O que será analisado
 
-* Será verificado:
-** Os requisitos pedidos nos testes
-** O layout
-** A qualidade do código
-** Os testes automatizados
+- Será verificado:
+- - Os requisitos pedidos nos testes
+- - O layout
+- - A qualidade do código
+- - Os testes automatizados
 
 
 
