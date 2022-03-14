@@ -19,9 +19,9 @@ O cliente pode fazer:
 * Para realizar saques e transferências é necessário autenticar o usuário
 * O saldo de uma conta nunca pode ficar negativo
 * Taxa de transferência:
-* De segunda a sexta das 9 às 18 horas a taxa é 5 reais por transferência
-* Fora desse horário a taxa é 7 reais
-* Acima de 1000 reais há um adicional de 10 reais na taxa
+  * De segunda a sexta das 9 às 18 horas a taxa é 5 reais por transferência
+  * Fora desse horário a taxa é 7 reais
+  * Acima de 1000 reais há um adicional de 10 reais na taxa
 
 # Necessidade Técnica
 
@@ -34,11 +34,11 @@ O cliente pode fazer:
 
 # O que será analisado
 
-- Será verificado:
-- - Os requisitos pedidos nos testes
-- - O layout
-- - A qualidade do código
-- - Os testes automatizados
+* Será verificado:
+  * Os requisitos pedidos nos testes
+  * O layout
+  * A qualidade do código
+  * Os testes automatizados
 
 
 
